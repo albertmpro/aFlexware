@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
@@ -62,7 +62,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -95,10 +95,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="IdeaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MainIdea.xaml.cs">
+      <DependentUpon>MainIdea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SketchIdea.xaml.cs">
+      <DependentUpon>SketchIdea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemeIdea.xaml.cs">
+      <DependentUpon>ThemeIdea.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -107,6 +114,49 @@
     <None Include="aFlexIdea_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\aFlexIdea2.png" />
+    <Content Include="Assets\aFlexIdea2.scale-100.png" />
+    <Content Include="Assets\aFlexIdeaSmall.png" />
+    <Content Include="Assets\aFlexIdeaSmall.scale-100.png" />
+    <Content Include="Assets\aFlexIdeaSmall2.png" />
+    <Content Include="Assets\aFlexIdeaStore.png" />
+    <Content Include="Assets\aFlexIdeaWide.png" />
+    <Content Include="Assets\amscreen.png" />
+    <Content Include="Assets\appbar\about.png" />
+    <Content Include="Assets\appbar\add.png" />
+    <Content Include="Assets\appbar\aHubWide.png" />
+    <Content Include="Assets\appbar\Area.png" />
+    <Content Include="Assets\appbar\areaRoad.png" />
+    <Content Include="Assets\appbar\back.png" />
+    <Content Include="Assets\appbar\Browser.png" />
+    <Content Include="Assets\appbar\camera.png" />
+    <Content Include="Assets\appbar\cancel.png" />
+    <Content Include="Assets\appbar\circle.png" />
+    <Content Include="Assets\appbar\clear.png" />
+    <Content Include="Assets\appbar\clock.png" />
+    <Content Include="Assets\appbar\colorLabIcon.png" />
+    <Content Include="Assets\appbar\edit.png" />
+    <Content Include="Assets\appbar\erase.png" />
+    <Content Include="Assets\appbar\file.png" />
+    <Content Include="Assets\appbar\forward.png" />
+    <Content Include="Assets\appbar\icons.png" />
+    <Content Include="Assets\appbar\line.png" />
+    <Content Include="Assets\appbar\ok.png" />
+    <Content Include="Assets\appbar\paint.png" />
+    <Content Include="Assets\appbar\rectangle.png" />
+    <Content Include="Assets\appbar\refresh.png" />
+    <Content Include="Assets\appbar\remove.png" />
+    <Content Include="Assets\appbar\road.png" />
+    <Content Include="Assets\appbar\save.png" />
+    <Content Include="Assets\appbar\search.png" />
+    <Content Include="Assets\appbar\settings.png" />
+    <Content Include="Assets\appbar\share.png" />
+    <Content Include="Assets\appbar\showNavBar.png" />
+    <Content Include="Assets\appbar\star.png" />
+    <Content Include="Assets\appbar\start.png" />
+    <Content Include="Assets\appbar\status.png" />
+    <Content Include="Assets\appbar\trace.png" />
+    <Content Include="Assets\appbar\triangle.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -121,9 +171,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\MainIdea.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SketchIdea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThemeIdea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -136,9 +194,8 @@
       <Name>AlbertRun</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\aFlexRuntime\aFlexRuntime.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

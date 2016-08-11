@@ -1,0 +1,52 @@
+﻿<UserControl
+    x:Class="aFlexLab.View.QuickSketch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexLab.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+	<Grid Background="#ff333333">
+		<Grid.RowDefinitions>
+					<RowDefinition Height="auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+
+		<ctrl:CmdBar x:Name="cmdBar">
+			<ctrl:CmdButton ToolTipService.ToolTip="Draw" Label="Draw" Icon="Edit" />
+			<ctrl:CmdButton ToolTipService.ToolTip="Line" Label="Line">
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/line.png" />
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton ToolTipService.ToolTip="Rectangle" Label="Rectangle">
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/rectangle.png" />
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Label="Circle">
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/circle.png" />
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Label="Erase">
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/erase.png" />
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+		</ctrl:CmdBar>
+		<Viewbox Grid.Row="1">
+			<Grid>
+		
+
+				
+				<ctrl:SketchCanvas  DrawThickness="3.4" Background="White" Width="504" Height="504"  />
+			</Grid>
+		</Viewbox>
+
+	</Grid>
+</UserControl>

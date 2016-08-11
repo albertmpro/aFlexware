@@ -60,10 +60,20 @@ namespace Albert.Flex.Runtime
 		}
 		#endregion
 		#region Converters 
+		/// <summary>
+		/// Converts a link to your javascript file 
+		/// </summary>
+		/// <param name="_url"></param>
+		/// <returns></returns>
 		public static string ConvertScriptTag(string _url)
 		{
 			return $"<script langauge='javascript' src='{_url}'></script>";
 		}
+		/// <summary>
+		/// Converts a link to your Css  file 
+		/// </summary>
+		/// <param name="_url"></param>
+		/// <returns></returns>
 		public static string ConvertCssTag(string _url)
 		{
 			return $"<link rel='styleseet' type='text/css' media='screen' href='{_url}' />";

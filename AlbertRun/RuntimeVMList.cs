@@ -28,8 +28,8 @@ namespace Albert.Flex.Runtime
 		/// </summary>
 		public RuntimeVMList()
 		{
-			// Do nothing 
-
+		
+			
 		}
 		/// <summary>
 		/// Xml Constructor 
@@ -57,9 +57,24 @@ namespace Albert.Flex.Runtime
 
 		#region Public Method's 
 
-		public override string ToString()
+
+		/// <summary>
+		/// ForEach Lamba in the current list
+		/// </summary>
+		/// <param name="_method">What happens in the foreach</param>
+		public void ForEach(Action<T> _method)
 		{
-			return XmlFile.ToString();
+			foreach(var i in this)
+			{
+				_method?.Invoke(i);
+			}
+		}
+		public void QForEach(IEnumerable<XElement> _XElementQuery,Action<XElement> _method)
+		{
+			foreach (var i in _XElementQuery)
+			{
+				_method?.Invoke(i);
+			}
 		}
 
 		///<summary>

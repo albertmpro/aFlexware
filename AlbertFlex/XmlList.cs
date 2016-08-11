@@ -30,6 +30,8 @@ namespace Albert.Flex
 		/// <param name="_documentName">Name of the second tag in xml document(where your information goes)</param>
 		public XmlList(string _rootName, string _documentName)
 		{
+			
+
 			//Declare the root of the xml document  
 			root = new XElement(_rootName);
 			//Declare the document of element 
@@ -107,7 +109,13 @@ namespace Albert.Flex
 			return rquery;
 		}
 
-
+		public void ForEach(Action<T> _method)
+		{
+			foreach (var i in this)
+			{
+				_method?.Invoke(i);
+			}
+		}
 
 
 

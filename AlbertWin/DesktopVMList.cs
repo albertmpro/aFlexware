@@ -95,7 +95,13 @@ namespace Albert.Flex.Windows
 
 
 
-
+		public void ForEach(Action<T> _method)
+		{
+			foreach (var i in this)
+			{
+				_method?.Invoke(i);
+			}
+		}
 
 		///<summary>
 		/// Query's an xml document

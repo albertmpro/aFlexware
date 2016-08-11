@@ -5,4 +5,22 @@
     xmlns:local="using:aFlexIdea"
     RequestedTheme="Light">
 
+	<Application.Resources>
+		<!--#region Colors and Brushes-->
+		<Color x:Key="AccentColor">#FF336ABF</Color>
+		<Color x:Key="AccentColor2">#FF22477F</Color>
+		<Color x:Key="AccentColor3">#FF1F4073</Color>
+		<Color x:Key="AccentColor4">#FF183259</Color>
+		<Color x:Key="AccentColor5">#FF0E1C33</Color>
+
+		<SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+		<SolidColorBrush x:Key="AccentBrush2" Color="{StaticResource AccentColor2}"/>
+		<SolidColorBrush x:Key="AccentBrush3" Color="{StaticResource AccentColor3}"/>
+		<SolidColorBrush x:Key="AccentBrush4" Color="{StaticResource AccentColor4}"/>
+		<SolidColorBrush x:Key="AccentBrush5" Color="{StaticResource AccentColor5}"/>
+		<!--#endregion-->
+		
+	</Application.Resources>
+	
+	
 </Application>

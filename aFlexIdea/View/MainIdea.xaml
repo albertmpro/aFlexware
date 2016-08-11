@@ -1,0 +1,24 @@
+﻿<ctrl:Page10x
+    x:Class="aFlexIdea.View.MainIdea"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexIdea.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d">
+
+	<SplitView x:Name="splitView" CompactPaneLength="0" DisplayMode="CompactOverlay" OpenPaneLength="300"  PaneBackground="{StaticResource AccentBrush}">
+	<Grid Background="{ThemeResource AccentBrush3}">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<ctrl:HamburgerButton x:Name="hamMenu" Click="menu_OpenClick" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left"  Symbol="&#xE700;" />
+
+			<Frame Grid.RowSpan="2" />
+		</Grid>
+	</SplitView>
+
+
+</ctrl:Page10x>

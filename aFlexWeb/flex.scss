@@ -1,0 +1,162 @@
+﻿//flex.scss
+// Designed to help create complex css layouts
+// Created by Albert M. Byrd
+// Copyright 2016
+
+//@import "gwfonts"; // Import google Font Libary
+@import "flexui"; // Import the UI Libary
+
+
+@mixin bodySetup($cwidth,$font,$fontsize,$fore,$back)
+{
+	body 
+	{
+		margin: 0px; 
+		padding: 0px;
+		width: 100%; //Default width
+		font-family: $font; //Default font
+		font-size: $fontsize;  // Default fontsize
+		background: $back; //DefaultBackground
+	}
+	img 
+	{
+		border: 0px;
+	}
+
+	#paper
+	{
+		width:100%;
+		position:absolute;
+		top: 0px;
+	}
+	.content
+	{
+		@include contentSetup($cwidth,15px);
+
+	}
+	.clear 
+	{
+		clear:both;
+	}
+	.crow 
+	{
+		display: table;
+		padding-left: -15px;
+		padding-right: -15px;
+	}
+
+	.c2
+	{
+		@include column(50%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.c3
+	{
+		@include column(33%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.c4
+	{
+		@include column(25%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.c5
+	{
+		@include column(20%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cmain
+	{
+		@include column(66%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cside
+	{
+		@include column(30%);
+		padding: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cmain_pull
+	{
+		@include column(66%);
+		padding: 5px;
+		float: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cside_pull
+	{
+		@include column(30%);
+		padding: 5px;
+		float: right;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	 // Left Align
+	.left
+	{
+		text-align: left;
+	}
+	// Center Align
+	.center
+	{
+		text-align: center;
+	}
+	// Right Align
+	.right
+	{
+		text-align: right;
+	}
+	// Justify Align
+	.justify
+	{
+		text-align: justify;	
+	}
+
+	
+
+	#mnu // Do not show this menu 
+	{
+		display: none;
+
+		div{
+			display:none;
+		}
+	}
+
+	//mobile setup 
+	@media screen and (max-width: 768px)
+	{
+		#mnu{
+			@include mobileMenu(40px,40px, #fff);
+		}
+		.content {
+			@include contentSetup(85%,15px);
+		}
+
+		.c2,.c3,.c4,.cmain,.cside,.cmain_pull,.cside_pull 
+		{
+			padding: 5px;
+			width: 95%;
+			display: block;
+			float:none;
+		}
+
+	}
+
+}
+
+

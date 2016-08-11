@@ -14,7 +14,10 @@ namespace Albert.Flex
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        // Method Changes the property
+        /// <summary>
+		/// Accures when the Property is changed 
+		/// </summary>
+		/// <param name="Name"></param>
         protected void OnPropertyChanged(string Name)
         {
             if (PropertyChanged != null)

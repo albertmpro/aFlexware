@@ -1,0 +1,46 @@
+﻿<ctrl:Page10x
+    x:Class="aFlexLab.View.StartLab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexLab.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource AccentBrush3}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="80" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Pivot Grid.Row="1" x:Name="pivot">
+			<PivotItem Header="Quick Launch"  >
+				<Grid Background="#ff333333" >
+				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+			
+
+			<HyperlinkButton ToolTipService.ToolTip="Sketch Lab" Content="Sketch Lab" />
+			<HyperlinkButton ToolTipService.ToolTip="StoryBoard Lab"  Content="StoryBoard Lab" />
+			<HyperlinkButton ToolTipService.ToolTip="Browser Lab"  Content="Browser Lab" />
+			<HyperlinkButton ToolTipService.ToolTip="Theme Lab"  Content="Theme Lab" />
+
+		</StackPanel>	
+				</Grid>
+			</PivotItem>
+			<PivotItem Header="Quick Theme" >
+				<Grid Background="#FF222222">
+					
+					
+				</Grid>
+				
+				
+			</PivotItem>
+			<PivotItem Header="Quick Sketch"   >
+				<local:QuickSketch x:Name="sketch" />
+
+
+			</PivotItem>
+		</Pivot>
+	
+	</Grid>
+</ctrl:Page10x>
