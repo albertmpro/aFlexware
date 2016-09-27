@@ -15,6 +15,16 @@ namespace aFlexLab
 
 
 
+		/// <summary>
+		/// Default Constructor 
+		/// </summary>
+		public LabViewModel()
+		{
+
+		}
+
+
+
 	}
 
 

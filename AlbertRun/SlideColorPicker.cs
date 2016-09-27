@@ -20,6 +20,8 @@ namespace Albert.Flex.Runtime
 	[TemplatePart(Name = "PART_SlideGreen", Type = typeof(Slider))]
 	[TemplatePart(Name = "PART_SlideBlue", Type = typeof(Slider))]
 	[TemplatePart(Name = "PART_RectangleColor", Type = typeof(Rectangle))]
+	[TemplatePart(Name = "PART_List", Type = typeof(GridView))]
+	[TemplatePart(Name = "PART_Copy", Type = typeof(TextBox))]
 	/// <summary>
 	/// Pick a color with sliders 
 	/// </summary>
@@ -31,6 +33,9 @@ namespace Albert.Flex.Runtime
 		Slider slideGreen = new Slider();
 		Slider slideBlue = new Slider();
 		Rectangle rectangle = new Rectangle();
+		GridView colorList = new GridView();
+		RuntimeVMList<ColorModel> colors = new RuntimeVMList<ColorModel>();
+		TextBox txtCopy = new TextBox();
 		public SlideColorPicker()
 		{
 			this.DefaultStyleKey = typeof(SlideColorPicker);
@@ -44,6 +49,35 @@ namespace Albert.Flex.Runtime
 			slideGreen = GetTemplateChild("PART_SlideGreen") as Slider;
 			slideBlue = GetTemplateChild("PART_SlideBlue") as Slider;
 			rectangle = GetTemplateChild("PART_RectangleColor") as Rectangle;
+			colorList = GetTemplateChild("PART_List") as GridView;
+			txtCopy  = GetTemplateChild("PART_Copy") as TextBox;
+
+			//txtCopy Lamba 
+			if(txtCopy != null)
+			{
+				txtCopy.GotFocus += (sender, e) =>
+				{
+					txtCopy.SelectAll();
+				};
+			}
+		
+
+			//Link list to list here 
+			colorList.ItemsSource = colors;
+			
+			//colorList selected lamba 
+			colorList.SelectionChanged += (sender, e) =>
+			{
+				if (colorList.SelectedItem != null)
+				{
+					var cm = (ColorModel)colorList.SelectedItem;
+					SelectedColor = cm.Color;
+
+				
+				}
+			};
+
+
 			//Changed 
 			slideRed.ValueChanged += Slide_ValueChanged;
 			slideGreen.ValueChanged += Slide_ValueChanged;
@@ -51,13 +85,15 @@ namespace Albert.Flex.Runtime
 		}
 		public event Action<Color> OnColorChanged;
 
+		public static readonly DependencyProperty ListHeightProperty = DependencyProperty.Register("ListHeight", typeof(double), typeof(SlideColorPicker),null);
+		public static readonly DependencyProperty ListWidthProperty = DependencyProperty.Register("ListWidth", typeof(double), typeof(SlideColorPicker), null);
 
-		public static readonly DependencyProperty ColorProperty = DependencyProperty.Register("Color",
+		public static readonly DependencyProperty SelectedColorProperty = DependencyProperty.Register("SelectedColor",
 			typeof(Color),
 			typeof(ColorPickBase), new PropertyMetadata(Colors.Black, ((sender, e) =>
 			{
 				SlideColorPicker slide = (SlideColorPicker)sender;
-				var color = slide.Color; 
+				var color = slide.SelectedColor; 
 
 				if(color != null)
 				{
@@ -68,12 +104,30 @@ namespace Albert.Flex.Runtime
 
 			})));
 
-		public Color Color
+		public RuntimeVMList<ColorModel> ColorHistory { get { return colors; } }
+
+		public Color SelectedColor
 		{
-			get { return (Color)GetValue(ColorProperty); }
-			set { SetValue(ColorProperty, value); }
+			get { return (Color)GetValue(SelectedColorProperty); }
+			set { SetValue(SelectedColorProperty, value); }
+		}
+		/// <summary>
+		/// Gets or sets the height of the listbox 
+		/// </summary>
+		public double ListHeight
+		{
+			get { return (double)GetValue(ListHeightProperty); }
+			set { SetValue(ListHeightProperty, value); }
 		}
 
+		/// <summary>
+		/// Gets or sets the width of the listbox
+		/// </summary>
+		public double ListWidth
+		{
+			get { return (double)GetValue(ListWidthProperty); }
+			set { SetValue(ListWidthProperty, value); }
+		}
 
 		void Slide_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
 		{
@@ -82,12 +136,12 @@ namespace Albert.Flex.Runtime
 			R = Convert.ToByte(slideRed.Value);
 			G = Convert.ToByte(slideGreen.Value);
 			B = Convert.ToByte(slideBlue.Value);
-			Color = Color.FromArgb(255, R, G, B);
-			rectangle.Fill = new SolidColorBrush(Color);
+			SelectedColor = Color.FromArgb(255, R, G, B);
+			rectangle.Fill = new SolidColorBrush(SelectedColor);
 
 			if (OnColorChanged != null)
 			{
-				OnColorChanged(Color);
+				OnColorChanged(SelectedColor);
 			}
 		}
 

@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)FlexViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SevenColorModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUrl.cs" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,35 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:desktop="clr-namespace:Albert.Flex.Windows">
+
+
+	<Style TargetType="desktop:TextField">
+		<Setter Property="FontSize" Value="12pt" />
+		<Setter Property="HeaderFontSize" Value="14pt" />
+		<Setter Property="HeaderForeground" Value="Black" />
+		<Setter Property="HeaderMargin" Value="1,3" />
+		<Setter Property="TextBoxMargin" Value="1" />
+		<Setter Property="TextBoxHeight" Value="30" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="desktop:TextField">
+					<Border Background="{TemplateBinding Background}" >
+						<StackPanel>
+							<TextBlock x:Name="PART_TextBlock" Foreground="{TemplateBinding HeaderForeground}" Margin="{TemplateBinding HeaderMargin}" Height="auto" />
+							<TextBox x:Name="PART_TextBox" Margin="{TemplateBinding TextBoxMargin}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" FontSize="{TemplateBinding FontSize}"
+					FontWeight="{TemplateBinding FontWeight}"
+					FontStyle="{TemplateBinding FontStyle}"
+					Height="{TemplateBinding TextBoxHeight}"
+					FontFamily="{TemplateBinding FontFamily}"  />
+						</StackPanel>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+			
+		</Setter>
+		
+	</Style>
+	
 	<Style TargetType="desktop:ChromeBase">
 
 

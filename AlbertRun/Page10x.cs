@@ -18,7 +18,7 @@ namespace Albert.Flex.Runtime
 	public class Page10x : Page
 	{
 		CommandBar commandBar;
-		ContentDialog msg;
+		//ContentDialog msg;
 		/// <summary>
 		/// Hide the Phone StatusBar with this 
 		/// </summary>

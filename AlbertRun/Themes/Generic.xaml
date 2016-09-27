@@ -503,23 +503,53 @@
 								<RowDefinition Height="40" />
 								<RowDefinition Height="40" />
 								<RowDefinition Height="40" />
+								<RowDefinition Height="auto" />
 							</Grid.RowDefinitions>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto" />
 								<ColumnDefinition />
 								<ColumnDefinition  Width="Auto" />
 							</Grid.ColumnDefinitions>
-							<TextBlock Margin="7" VerticalAlignment="Center" FontSize="18" Grid.Row="0"  Text="R" />
-							<TextBlock Margin="7" VerticalAlignment="Center" FontSize="18" Grid.Row="1"  Text="G" />
-							<TextBlock Margin="7" VerticalAlignment="Center"  FontSize="18" Grid.Row="2" Text="B" />
+							<TextBlock Margin="7" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" FontSize="18" Grid.Row="0"  Text="R" />
+							<TextBlock Margin="7" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" FontSize="18" Grid.Row="1"  Text="G" />
+							<TextBlock Margin="7" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center"  FontSize="18" Grid.Row="2" Text="B" />
 							<Slider x:Name="PART_SlideRed" Value="33" StepFrequency=".2" Minimum="0" Maximum="255" Grid.Row="0" Grid.Column="1"  />
 							<Slider x:Name="PART_SlideGreen"  Value="33" StepFrequency=".2"  Minimum="0" Maximum="255" Grid.Row="1" Grid.Column="1"  />
 							<Slider x:Name="PART_SlideBlue"  Value="33" StepFrequency=".2"  Minimum="0" Maximum="255" Grid.Row="2" Grid.Column="1"  />
 
-							<Rectangle x:Name="PART_RectangleColor" Grid.Column="2" Stroke="White" StrokeThickness="1.5"  Grid.RowSpan="3" Height="80" Margin="10" Width="80">
+							<Rectangle x:Name="PART_RectangleColor" Grid.Column="2" Stroke="White" StrokeThickness="1.5"  Grid.RowSpan="3" Height="80" Margin="10" Width="80" />
 
+							<GridView Width="{TemplateBinding ListWidth}" Height="{TemplateBinding ListHeight}" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.HorizontalScrollMode="Disabled"  ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Grid.Row="3" Grid.ColumnSpan="3" x:Name="PART_List">
+								<GridView.ItemsPanel>
+									<ItemsPanelTemplate>
+										<runtime:WrapPanel Orientation="Horizontal" />
+									</ItemsPanelTemplate>
+								</GridView.ItemsPanel>
+								<GridView.ItemTemplate>
+									<DataTemplate>
 
-							</Rectangle>
+										<Grid>
+										<Button Width="45" BorderBrush="White" BorderThickness=".7" Height="45" Background="Transparent" Margin="4" >
+										
+										<Button.Flyout>
+													<Flyout>
+														<Grid>
+															<TextBox x:Name="PART_Copy" IsReadOnly="True" Text="{Binding HtmlString}" />
+														</Grid>
+													</Flyout>
+												</Button.Flyout>
+										</Button>
+											<Rectangle ToolTipService.ToolTip="{Binding HtmlString}" Stroke="White" StrokeThickness="1.3" Width="20" Height="20">
+												<Rectangle.Fill>
+													<SolidColorBrush Color="{Binding Color}" />
+												</Rectangle.Fill>
+
+											</Rectangle>
+										</Grid>
+									</DataTemplate>
+								</GridView.ItemTemplate>
+								
+							</GridView>
 
 						</Grid>
 

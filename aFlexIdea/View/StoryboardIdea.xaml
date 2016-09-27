@@ -1,0 +1,44 @@
+﻿ <ctrl:Page10x
+    x:Class="aFlexIdea.View.StoryboardIdea"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexIdea.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource AccentBrush7}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<!-- Command  -->
+
+		<ctrl:CmdBar x:Name="cmdBar">
+			<ctrl:CmdButton Label="Draw" Icon="Edit" />
+		</ctrl:CmdBar>
+		
+		<!-- Grid WorkView for the Storybaord-->
+		<Grid Grid.Row="1" x:Name="workView">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+			<!-- Viewbox for the sketch to strech with the  -->
+			<Viewbox Stretch="Uniform" x:Name="vbox">
+				<Grid Width="480" Height="800">
+					<ctrl:SketchCanvas  x:Name="sketchCanvas" />
+				</Grid>
+			</Viewbox>
+			<TextBox InputScope="Text" x:Name="txt" GotFocus="txt_GotFocus" Grid.Row="1" Margin="4" TextWrapping="Wrap" />
+
+
+		</Grid>
+		
+		
+		
+		
+	</Grid>
+</ctrl:Page10x>

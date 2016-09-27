@@ -1,13 +1,91 @@
-﻿<Page
+﻿<ctrl:Page10x
     x:Class="aFlexLab.View.SketchLab"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:aFlexLab.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid Background="{ThemeResource AccentBrush7}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<ctrl:CmdBar x:Name="cmdBar">
+			<ctrl:CmdButton Click="cmd_Click" Label="Draw" Icon="Edit" />
+			<ctrl:CmdButton Click="cmd_Click"  Label="Line" >
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/line.png"/>
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Click="cmd_Click"  Label="Rectangle" >
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/rectangle.png"/>
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Click="cmd_Click"  Label="Circle" >
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/circle.png"/>
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Click="cmd_Click"  Label="Erase" >
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/erase.png"/>
+				</ctrl:CmdButton.Icon>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Click="cmd_Click"  Label="Brush Color" >
+				<ctrl:CmdButton.Icon>
+					<BitmapIcon UriSource="ms-appx:///Assets/appbar/colorLabIcon.png"/>
+				</ctrl:CmdButton.Icon>
+				<ctrl:CmdButton.Flyout>
+					<Flyout>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto" />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<TextBlock Foreground="Black" FontSize="30" Text="Brush Color Picker"  />
+							<Viewbox Grid.Row="1"  Stretch="Uniform">
+								<Grid>
+									<ctrl:SlideColorPicker x:Name="colorPicker" Width="300" ListWidth="300" ListHeight="250" />
+								</Grid>
+							</Viewbox>
+							
+						</Grid>
+					</Flyout>
+				</ctrl:CmdButton.Flyout>
+			</ctrl:CmdButton>
 
-    </Grid>
-</Page>
+			<ctrl:CmdBar.SecondaryCommands>
+				<ctrl:CmdButton x:Name="cmdTrace" Click="trace_Click" Label="Trace" IsEnabled="False" />
+				<ctrl:CmdButton Label="New" >
+					<ctrl:CmdButton.Flyout>
+						<Flyout>
+							<StackPanel>
+								<ComboBox x:Name="cmbType">
+									<ComboBoxItem Content="Sketch" />
+									<ComboBoxItem Content="StoryBoard" />
+									<ComboBoxItem Content="Map" />
+									<ComboBoxItem Content="WebBrowser" />
+
+								</ComboBox>
+								<ctrl:PushButton x:Name="btnCreate" Content="Create New Item" IsEnabled="False" />
+							</StackPanel>
+						</Flyout>
+					</ctrl:CmdButton.Flyout>
+				</ctrl:CmdButton>
+				<ctrl:CmdButton Label="Save"  Click="cmd_Click"  />
+				<ctrl:CmdButton Label="Clear"  Click="cmd_Click"  />
+
+
+			</ctrl:CmdBar.SecondaryCommands>
+		</ctrl:CmdBar>
+		
+		
+		<Grid x:Name="layoutRoot" Grid.Row="1" />
+
+
+	</Grid>
+</ctrl:Page10x>

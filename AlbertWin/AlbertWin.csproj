@@ -7,7 +7,7 @@
     <ProjectGuid>{D1A2E133-FA52-455E-831B-9CDC086CFD69}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlbertWin</RootNamespace>
+    <RootNamespace>Albert.Flex.Windows</RootNamespace>
     <AssemblyName>AlbertWin</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="PushButton.cs" />
     <Compile Include="QuickAnimation.cs" />
+    <Compile Include="TextField.cs" />
     <Compile Include="ThemeControl.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="ViewShell.cs" />

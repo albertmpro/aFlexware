@@ -1,0 +1,30 @@
+﻿<ctrl:Page10x
+    x:Class="aFlexIdea.View.StartIdea"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexIdea.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource AccentBrush7}">
+		<Pivot x:Name="pivot" Title="aFlexIdea">
+			<PivotItem Header="Launch">
+				<StackPanel>
+					<HyperlinkButton Tag="sketch" Content="Sketch Idea" />
+					<HyperlinkButton Click="hyp_Link" Tag="storyboard" Content="Storyboard Idea" />
+					<HyperlinkButton Tag="theme" Content="Theme Idea" />
+					
+					
+
+				</StackPanel>
+				
+				
+			</PivotItem>
+			
+			
+			
+		</Pivot>
+	</Grid>
+</ctrl:Page10x>

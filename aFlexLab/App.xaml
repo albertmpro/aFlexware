@@ -18,12 +18,17 @@
 		<Color x:Key="AccentColor3">#FF1F4073</Color>
 		<Color x:Key="AccentColor4">#FF183259</Color>
 		<Color x:Key="AccentColor5">#FF0E1C33</Color>
-
-		<SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+		<Color x:Key="AccentColor6">#ffffff</Color>
+		<Color x:Key="AccentColor7">#222222</Color>
+		
+		<SolidColorBrush x:Key="AccentBrush"  Color="{StaticResource AccentColor}"/>
 		<SolidColorBrush x:Key="AccentBrush2" Color="{StaticResource AccentColor2}"/>
 		<SolidColorBrush x:Key="AccentBrush3" Color="{StaticResource AccentColor3}"/>
 		<SolidColorBrush x:Key="AccentBrush4" Color="{StaticResource AccentColor4}"/>
 		<SolidColorBrush x:Key="AccentBrush5" Color="{StaticResource AccentColor5}"/>
+		<SolidColorBrush x:Key="AccentBrush6" Color="{StaticResource AccentColor6}"/>
+		<SolidColorBrush x:Key="AccentBrush7" Color="{StaticResource AccentColor7}"/>
+		
 		<!--#endregion-->
 
 		<!--#region UI Style-->
@@ -83,6 +88,8 @@
 			<Setter Property="BorderBrushPointerOver" Value="White" />
 			<Setter Property="BorderThickness" Value="1.1" />
 		</Style>
+		
+		
 		<!--#endregion-->
 
 		<!--#region Typeography  and Headers-->
@@ -121,6 +128,10 @@
 
 
 		<!--#endregion-->
+		
+		
+		
+		
 	</Application.Resources>
 
 

@@ -10,7 +10,7 @@ namespace aFlexIdea
 	public class IdeaViewModel : FlexViewModel
 	{
 
-
+		
 
 		public IdeaViewModel()
 		{

@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="help\style.scss" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -100,23 +101,29 @@
     <Compile Include="View\BrowserLab.xaml.cs">
       <DependentUpon>BrowserLab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\HelpLab.xaml.cs">
+      <DependentUpon>HelpLab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainLab.xaml.cs">
       <DependentUpon>MainLab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QuickSketch.xaml.cs">
-      <DependentUpon>QuickSketch.xaml</DependentUpon>
+    <Compile Include="View\Maps.xaml.cs">
+      <DependentUpon>Maps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuickTheme.xaml.cs">
+      <DependentUpon>QuickTheme.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SketchLab.xaml.cs">
       <DependentUpon>SketchLab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StartLab.xaml.cs">
-      <DependentUpon>StartLab.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\StoryboardLab.xaml.cs">
-      <DependentUpon>StoryboardLab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ThemeLab.xaml.cs">
       <DependentUpon>ThemeLab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WebBrowser.xaml.cs">
+      <DependentUpon>WebBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WebProjectLab.xaml.cs">
+      <DependentUpon>WebProjectLab.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +173,7 @@
     <Content Include="Assets\appbar\status.png" />
     <Content Include="Assets\appbar\trace.png" />
     <Content Include="Assets\appbar\triangle.png" />
+    <Content Include="help\index.html" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -197,11 +205,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\HelpLab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainLab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QuickSketch.xaml">
+    <Page Include="View\Maps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuickTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,15 +225,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StartLab.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\StoryboardLab.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ThemeLab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WebBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WebProjectLab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

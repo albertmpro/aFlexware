@@ -1,0 +1,81 @@
+﻿<Application x:Class="aFlexCode.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:aFlexCode"
+			 xmlns:ctrl="clr-namespace:Albert.Flex.Windows;assembly=AlbertWin"
+			 xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             StartupUri="/View/MainShell.xaml">
+    <Application.Resources>
+
+		<local:CodeViewModel x:Key="viewModel" />
+		
+		
+		<!--#region Colors and Brushes-->
+		<Color x:Key="AccentColor">#FF336ABF</Color>
+		<Color x:Key="AccentColor2">#FF22477F</Color>
+		<Color x:Key="AccentColor3">#FF1F4073</Color>
+		<Color x:Key="AccentColor4">#FF183259</Color>
+		<Color x:Key="AccentColor5">#FF0E1C33</Color>
+		<Color x:Key="AccentColor6">#fffffff</Color>
+		<Color x:Key="AccentColor7">#222222</Color>
+		<SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+		<SolidColorBrush x:Key="AccentBrush2" Color="{StaticResource AccentColor2}"/>
+		<SolidColorBrush x:Key="AccentBrush3" Color="{StaticResource AccentColor3}"/>
+		<SolidColorBrush x:Key="AccentBrush4" Color="{StaticResource AccentColor4}"/>
+		<SolidColorBrush x:Key="AccentBrush5" Color="{StaticResource AccentColor5}"/>
+		<SolidColorBrush x:Key="AccentBrush6" Color="{StaticResource AccentColor6}"/>
+		<SolidColorBrush x:Key="AccentBrush7" Color="{StaticResource AccentColor7}"/>
+		<!--#endregion-->
+
+		<Style TargetType="local:CodeEditor">
+			<Setter Property="FontFamily" Value="Courier New" />
+			<Setter Property="FontSize" Value="14pt" />
+			<Setter Property="Background" Value="#222222" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="ShowLineNumbers" Value="True" />
+
+		</Style>
+		<!--#region UI Style-->
+
+	
+
+
+		<Style TargetType="ctrl:PushButton"  >
+			<Setter Property="Height" Value="45" />
+			<Setter Property="Width" Value="200" />
+			<Setter Property="Background" Value="{StaticResource AccentBrush4}" />
+			<Setter Property="BackgroundMouseOver" Value="{StaticResource AccentBrush2}" />
+			<Setter Property="BackgroundPressed" Value="{StaticResource AccentBrush4}" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="ForegroundMouseOver" Value="#cccccc" />
+			<Setter Property="ForegroundPressed" Value="White" />
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderBrushMouseOver" Value="White" />
+			<Setter Property="BorderThickness" Value=".7" />
+		</Style>
+
+		<Style TargetType="ctrl:OptionButton"  >
+			<Setter Property="Height" Value="45" />
+			<Setter Property="Width" Value="45" />
+			<Setter Property="Background" Value="{StaticResource AccentBrush}" />
+			<Setter Property="BackgroundMouseOver" Value="{StaticResource AccentBrush2}" />
+			<Setter Property="BackgroundChecked" Value="{StaticResource AccentBrush4}" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="ForegroundMouseOver" Value="#cccccc" />
+			<Setter Property="ForegroundChecked" Value="White" />
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderBrushMouseOver" Value="White" />
+			<Setter Property="BorderThickness" Value=".7" />
+		</Style>
+
+
+
+		<!--#endregion-->
+
+
+
+
+
+
+	</Application.Resources>
+</Application>

@@ -103,6 +103,12 @@
     <Compile Include="View\SketchIdea.xaml.cs">
       <DependentUpon>SketchIdea.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\StartIdea.xaml.cs">
+      <DependentUpon>StartIdea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoryboardIdea.xaml.cs">
+      <DependentUpon>StoryboardIdea.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ThemeIdea.xaml.cs">
       <DependentUpon>ThemeIdea.xaml</DependentUpon>
     </Compile>
@@ -179,6 +185,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\StartIdea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StoryboardIdea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ThemeIdea.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,7 +208,11 @@
       <Name>AlbertRun</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
   <Import Project="..\aFlexRuntime\aFlexRuntime.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

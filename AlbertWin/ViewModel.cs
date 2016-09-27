@@ -22,7 +22,7 @@ namespace Albert.Flex.Windows
             p.Start();
         }
 
-		public void Notification(string _value)
+		public void Notify(string _value)
 		{
 			if (OnNotification != null)
 			{

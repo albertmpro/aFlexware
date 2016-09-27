@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="aFlexLab.View.Maps"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexLab.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:map="using:Windows.UI.Xaml.Controls.Maps"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition  Width="auto"/>
+		</Grid.ColumnDefinitions>
+		<map:MapControl Grid.ColumnSpan="2"  MapServiceToken="OscARWhpUo3j6Nq46gJ3~_QNQTTqLuHgjWCqsUc7VHg~AkWwZlmGpGG3yu2OAV_AGNHkH_dfT4OVzHHjZ6FwcAURtIXjiPt_LAWINjg7laMf" x:Name="map" />
+		<StackPanel Grid.Column="1" Orientation="Horizontal" >
+		<ComboBox x:Name="cmb" Grid.Column="1" Width="150"  SelectionChanged="cmb_SelectionChanged" >
+			<ComboBoxItem Content="Aerial" />
+			<ComboBoxItem Content="ArialWithRoads" />
+			<ComboBoxItem Content="Aerial3d" />
+			<ComboBoxItem Content="Aerial3dWithRoads" />
+			<ComboBoxItem Content="Road" />
+			<ComboBoxItem Content="Terrain" />
+			<ComboBoxItem Content="None" />
+		</ComboBox>
+			<ctrl:PushButton Content="Get Location " VerticalAlignment="Top" x:Name="btnFind" Click="btnFind_Click" FontSize="20" Width="150" />
+		</StackPanel>
+	</Grid>
+</UserControl>

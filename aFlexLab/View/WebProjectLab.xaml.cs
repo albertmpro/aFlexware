@@ -12,47 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Albert.Flex.Runtime;
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace aFlexLab.View
 {
-	public sealed partial class QuickSketch : UserControl
+	/// <summary>
+	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// </summary>
+	public sealed partial class WebProjectLab : Page
 	{
-		public QuickSketch()
+		public WebProjectLab()
 		{
 			this.InitializeComponent();
 		}
-
-		void cmd_Click(object sender, RoutedEventArgs e)
-		{
-			var cmd = sender as CmdButton;
-
-			switch(cmd.Label)
-			{
-
-				case "Draw":
-
-					break;
-				case "Line":
-
-					break;
-				case "Rectangle":
-
-					break;
-				case "Circle":
-
-					break;
-
-
-				default:
-
-					break;
-			}
-
-
-		}
-
-
 	}
 }

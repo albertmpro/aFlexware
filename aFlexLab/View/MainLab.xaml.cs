@@ -32,31 +32,36 @@ namespace aFlexLab.View
 			this.InitializeComponent();
 
 			//Link to the StartLab 
-			frame.Navigate(typeof(StartLab));
+			frame.Navigate(typeof(SketchLab));
 
 			//ViewModel Links 
 			App.ViewModel.Menu = hamMenu; // Link to defualt hambuger menu 
 			App.ViewModel.SplitView = splitView; // Link to the splitView
 			App.ViewModel.Frame = frame; // Link to the frame 
-			App.ViewModel.OnNotification += notify;
 
-
-			//App.ViewModel.Notify("Welcome to the aFlexLab!");
+			//OnNotification lamba 
+			App.ViewModel.OnNotification += (_message) =>
+			{
+				// Display the message 
+				tbStatus.Text = _message;
+				// Create an Animation for that message
+				RunDouble(tbStatus, "Opacity", 1, .18, TimeSpan.FromSeconds(4.4));
+			};
 
 		}
 
-
-		/// <summary>
-		/// Notify Message 
-		/// </summary>
-		/// <param name="_message"></param>
-		void notify(string _message)
+		void ham_Click(object sender, RoutedEventArgs e)
 		{
-			//Display the message 
-			tbStatus.Text = _message;
-			// Create an Animation for that message
-			RunDouble(tbStatus, "Opacity", 1, .18, TimeSpan.FromSeconds(4.4));
+			var ham = sender as HamburgerButton;
+
+
+
+
 		}
+
+
+
+
 
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
