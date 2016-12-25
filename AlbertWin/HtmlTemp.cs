@@ -62,23 +62,23 @@ namespace Albert.Flex.Windows
 		#region Converters 
 		public static string ConvertScriptTag(string _url)
 		{
-			return $"<script langauge='javascript' src='{_url}'></script>";
+			return $"<script langauge=\"javascript\" src=\"{_url}\"></script>";
 		}
 		public static string ConvertCssTag(string _url)
 		{
-			return $"<link rel='styleseet' type='text/css' media='screen' href='{_url}' />";
+			return $"<link rel=\"styleseet\" type=\"text/css\" media=\"screen\" href=\"{_url}\" />";
 		}
 		public static string ConvertCssTag(string _url, string _media)
 		{
-			return $"<link rel='styleseet' media='{_media}' type='text/css' href='{_url}' />";
+			return $"<link rel=\"styleseet\" media=\"{_media}\" type=\"text/css\" href=\"{_url}\" />";
 		}
 		public static string ConvertIconTag(string _url)
 		{
-			return $"<link rel='shortcut icon' href='{_url}' type='image/x-icon' />";
+			return $"<link rel=\"shortcut icon\" href=\"{_url}\" type=\"image/x-icon\" />";
 		}
 		public static string ConvertImgTag(string _url, string _title)
 		{
-			return $"<img src={_url} src='{_title}' />";
+			return $"<img src={_url} src=\"{_title}\" />";
 		}
 		public static string ConvertDivTag(string _content)
 		{
@@ -106,7 +106,7 @@ namespace Albert.Flex.Windows
 		{
 			get
 			{
-				var rv = $"<meta name='description' content='{description}' >";
+				var rv = $"<meta name=\"description\" content=\"{description}\" >";
 				return rv;
 			}
 
@@ -121,7 +121,7 @@ namespace Albert.Flex.Windows
 		{
 			get
 			{
-				var rv = $"<meta name='author' content='{author}' >";
+				var rv = $"<meta name=\"author\" content=\"{author}\" >";
 				return rv;
 			}
 
@@ -138,7 +138,7 @@ namespace Albert.Flex.Windows
 		{
 			get
 			{
-				var rv = $"<meta name='keywords' content='{keywords}' >";
+				var rv = $"<meta name=\"keywords\" content=\"{keywords}\" >";
 				return rv;
 			}
 
@@ -155,8 +155,8 @@ namespace Albert.Flex.Windows
 		{
 			get
 			{
-				var start = "\n<head>\n";
-				var middle = $"\n<head>\n<meta charset='UTF-8'>\n<meta name='viewport' content = 'width=device-width, initial-scale=1' >\n{Description}\n{Keywords}\n{Author}\n";
+				var start = "\n<html>\n";
+				var middle = $"\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content = \"width=device-width, initial-scale=1\" >\n{Description}\n{Keywords}\n{Author}\n";
 				var end = "\n</head>";
 
 				Styles?.ForEach((s) =>

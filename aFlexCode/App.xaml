@@ -37,11 +37,24 @@
 		</Style>
 		<!--#region UI Style-->
 
-	
+		<Style TargetType="TextBlock">
+			<Setter Property="FontSize" Value="16pt" />
 
+
+		</Style>
+		<Style TargetType="TextBox">
+			<Setter Property="FontSize" Value="14pt" />
+			<Setter Property="Margin" Value="3.5" />
+			<Setter Property="Width" Value="250" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="Height" Value="30" />
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="BorderThickness" Value="1.4" />
+			<Setter Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+		</Style>
 
 		<Style TargetType="ctrl:PushButton"  >
-			<Setter Property="Height" Value="45" />
+			<Setter Property="Height" Value="75" />
 			<Setter Property="Width" Value="200" />
 			<Setter Property="Background" Value="{StaticResource AccentBrush4}" />
 			<Setter Property="BackgroundMouseOver" Value="{StaticResource AccentBrush2}" />
@@ -52,20 +65,22 @@
 			<Setter Property="BorderBrush" Value="White" />
 			<Setter Property="BorderBrushMouseOver" Value="White" />
 			<Setter Property="BorderThickness" Value=".7" />
+			<Setter Property="Margin" Value="7" />
 		</Style>
 
 		<Style TargetType="ctrl:OptionButton"  >
-			<Setter Property="Height" Value="45" />
-			<Setter Property="Width" Value="45" />
+			<Setter Property="Height" Value="52" />
+			<Setter Property="Width" Value="52" />
 			<Setter Property="Background" Value="{StaticResource AccentBrush}" />
 			<Setter Property="BackgroundMouseOver" Value="{StaticResource AccentBrush2}" />
 			<Setter Property="BackgroundChecked" Value="{StaticResource AccentBrush4}" />
+			<Setter Property="Margin" Value="8" />
 			<Setter Property="Foreground" Value="White" />
 			<Setter Property="ForegroundMouseOver" Value="#cccccc" />
 			<Setter Property="ForegroundChecked" Value="White" />
 			<Setter Property="BorderBrush" Value="White" />
 			<Setter Property="BorderBrushMouseOver" Value="White" />
-			<Setter Property="BorderThickness" Value=".7" />
+			<Setter Property="BorderThickness" Value="1.7" />
 		</Style>
 
 

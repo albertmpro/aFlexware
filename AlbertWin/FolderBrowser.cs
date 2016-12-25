@@ -8,7 +8,7 @@ using System.IO;
 namespace Albert.Flex.Windows
 {
 	/// <summary>
-	/// Design to capture the content's of Folder 
+	/// Design to capture the content's of Folder Browser  
 	/// </summary>
 	public class FolderBrowser
 	{

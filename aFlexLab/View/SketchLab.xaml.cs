@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Albert.Flex.Runtime;
 using static Albert.Flex.Runtime.AsyncIO;
 using static Albert.Flex.Runtime.Device10x;
@@ -43,6 +32,8 @@ namespace aFlexLab.View
 		{
 			this.InitializeComponent();
 
+			//ViewModel Menu
+			App.ViewModel.Menu.Visibility = Visibility.Visible;
 
 			//Declare Field's 
 			sketchCanvas = new SketchCanvas { DrawThickness = 15, DrawOpacity = .15 }; // Create's the main SketchCanvas 
@@ -81,7 +72,6 @@ namespace aFlexLab.View
 			
 
 			//Default Drawing Size
-
 			State = SketchViewState.Sketch;
 
 			//ColorPicker lamba
@@ -91,7 +81,7 @@ namespace aFlexLab.View
 				sketchCanvas.DrawBrush = new SolidColorBrush(c);
 
 				//Set limit 
-				if (colorPicker.ColorHistory.Count >= 250)
+				if (colorPicker.ColorHistory.Count >= 450)
 					colorPicker.ColorHistory.Clear();
 			};
 
@@ -107,28 +97,32 @@ namespace aFlexLab.View
 			{
 				case "Draw":
 					sketchCanvas.SketchState = SketchState.Draw;
+					App.ViewModel.Notify("Using Draw tool");
 					break;
 				case "Line":
 					sketchCanvas.SketchState = SketchState.Line;
-
+					App.ViewModel.Notify("Using Line tool");
 					break;
 				case "Rectangle":
 					sketchCanvas.SketchState = SketchState.Rectangle;
-
+					App.ViewModel.Notify("Using Rectangle tool ");
 					break;
 				case "Circle":
 					sketchCanvas.SketchState = SketchState.Circle;
-
+					App.ViewModel.Notify("Using circle tool");
 					break;
 				case "Erase":
 					sketchCanvas.SketchState = SketchState.Erase;
+					App.ViewModel.Notify("Using eraser tool");
 
 					break;
 				case "Save":
 
 					// Create a save picker box for this action 
-					await SavePickerAsync(App.ViewModel.ImgFilter, "Sketch", async (p, s) =>
+					await SavePickerAsync(App.ViewModel.ImgFilter, "MySketch.png", async (p, s) =>
 					{
+						App.ViewModel.Notify("Sketch has been saved.");
+						p.DefaultFileExtension = ".png";
 						// Save the file type based on the state and file extension 
 						switch (State)
 						{
@@ -136,16 +130,14 @@ namespace aFlexLab.View
 								
 						
 							   sketchCanvas.Opacity = 1;
-							   await ExportPngAsync(sketchCanvas, 72); // Save to png format 
+							   await ExportPngAsync(s, sketchCanvas, 72); // Save to png format 
 
-								
-								
 								break;
 							case SketchViewState.MapTrace:
 
 							
 								sketchCanvas.Opacity = 1;
-								await ExportPngAsync(sketchCanvas, 72); // Save to png format 
+								await ExportPngAsync(s, sketchCanvas, 72); // Save to png format 
 
 								sketchCanvas.Opacity = tracop;
 
@@ -154,7 +146,7 @@ namespace aFlexLab.View
 
 								
 								sketchCanvas.Opacity = 1;
-								await ExportPngAsync(sketchCanvas, 72); // Save to png format 
+								await ExportPngAsync(s,sketchCanvas, 72); // Save to png format 
 
 							
 								sketchCanvas.Opacity = tracop;
@@ -163,7 +155,7 @@ namespace aFlexLab.View
 
 							case SketchViewState.StoryBoard:
 							
-								await ExportPngAsync(stackStory, 72); // Save to the png format 
+								await ExportPngAsync(s, stackStory, 72); // Save to the png format 
 								
 							
 								break;
@@ -183,7 +175,6 @@ namespace aFlexLab.View
 							{
 								txtNotes.Text = "";
 								sketchCanvas.Children.Clear();
-
 							});
 							break;
 						default:
@@ -191,7 +182,7 @@ namespace aFlexLab.View
 							{
 					
 								sketchCanvas.Children.Clear();
-
+								App.ViewModel.Notify("Sketch has been cleared.");
 							});
 
 							break;
@@ -207,6 +198,7 @@ namespace aFlexLab.View
 
 		}
 
+
 		void trace_Click(object sender, RoutedEventArgs e)
 		{
 			switch(sketchCanvas.Visibility)
@@ -216,6 +208,7 @@ namespace aFlexLab.View
 					break;
 				case Visibility.Collapsed:
 					sketchCanvas.Visibility = Visibility.Visible;
+					App.ViewModel.Notify("Tracing Paper Visible");
 					break;
 			}
 		}
@@ -245,7 +238,7 @@ namespace aFlexLab.View
 						layoutRoot.Children.Add(viewbox);
 
 						sketchCanvas.Opacity = 1;
-
+						//App.ViewModel.Notify("Using Sketch Mode");
 						break;
 					case SketchViewState.StoryBoard:
 						CleanUp(false);
@@ -270,6 +263,8 @@ namespace aFlexLab.View
 
 						//Show the viewbox 
 						layoutRoot.Children.Add(viewbox);
+
+						App.ViewModel.Notify("Using Storyboard Mode");
 						break;
 					case SketchViewState.MapTrace:
 						CleanUp(true); // Clean up the area
@@ -283,6 +278,7 @@ namespace aFlexLab.View
 						sketchCanvas.Visibility = Visibility.Collapsed;
 						layoutRoot.Children.Add(maps);
 						layoutRoot.Children.Add(sketchCanvas);
+						App.ViewModel.Notify("Using Map Mode");
 						break;
 					case SketchViewState.WebTrace:
 						CleanUp(true);
@@ -295,6 +291,8 @@ namespace aFlexLab.View
 						sketchCanvas.Visibility = Visibility.Collapsed;
 						layoutRoot.Children.Add(webBrowser);
 						layoutRoot.Children.Add(sketchCanvas);
+
+						App.ViewModel.Notify("Using Web Mode");
 						break;
 				}
 
@@ -308,8 +306,13 @@ namespace aFlexLab.View
 			cmdTrace.IsEnabled =  _isEnabled;
 		}
 
+		private void BrushSizeChange_Click(object sender, RoutedEventArgs e)
+		{
+			//Set the SketchCanvas Brush size and opacity 
+			sketchCanvas.DrawThickness = slideSize.Value;
+			sketchCanvas.DrawOpacity = slideOpacity.Value;
 
-
+		}
 	}
 
 	public enum SketchViewState

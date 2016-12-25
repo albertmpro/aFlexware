@@ -1,0 +1,22 @@
+﻿<ctrl:DocumentControl x:Class="aFlexCode.View.ProjectTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:aFlexCode.View"
+			 xmlns:ctrl="clr-namespace:Albert.Flex.Windows;assembly=AlbertWin"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="960">
+    <Grid Background="{StaticResource AccentBrush7}">
+		<StackPanel>
+			<TextBlock Margin="15,21,0,0" FontSize="24pt" Foreground="White" Text="Project Tab" />
+			<ctrl:PushButton Click="push_Click" Content="New Text Document" NavString="txt" />
+
+		</StackPanel>
+		
+		
+		
+
+
+	</Grid>
+</ctrl:DocumentControl>

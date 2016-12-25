@@ -1,0 +1,42 @@
+﻿<ctrl:DocumentControl x:Class="aFlexCode.View.StylesheetTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:ctrl="clr-namespace:Albert.Flex.Windows;assembly=AlbertWin"
+             xmlns:local="clr-namespace:aFlexCode.View"
+			 xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:m="clr-namespace:aFlexCode"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="960">
+	
+    <Grid Background="{StaticResource AccentBrush4}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition />
+			
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<local:FiveTheme x:Name="theme" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+		<StackPanel Grid.Row="1" Margin="7">
+			
+			<TextBlock Text="Name:" />
+			<TextBox x:Name="txtName" />
+			<TextBlock Text="Content Width:" />
+			<TextBox x:Name="txtWidth" Width="120"  TextAlignment="Right" />
+			<TextBlock Text="Font Family:" />
+			<TextBox x:Name="txtFont" Width="280" />
+			<TextBlock Text="FontSize:" />
+			<TextBox x:Name="txtFontSize" Width="120"  TextAlignment="Right" />
+			<ctrl:PushButton Content="Generate Stylesheet" HorizontalAlignment="Left" />
+			<m:CodeEditor x:Name="txtStyle" IsReadOnly="True" Height="190" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+		</StackPanel>
+		<tk:ColorCanvas  Grid.Row="1" Background="{StaticResource AccentBrush2}"  x:Name="colorPicker" VerticalAlignment="Center" Grid.Column="1"
+		Height="250" SelectedColorChanged="colorPicker_SelectedColorChanged"/>
+	</Grid>
+	
+</ctrl:DocumentControl>

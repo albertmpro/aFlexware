@@ -87,12 +87,37 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CodeEditor.cs" />
+    <Compile Include="View\FiveTheme.xaml.cs">
+      <DependentUpon>FiveTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewItemWindow.xaml.cs">
+      <DependentUpon>NewItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectTab.xaml.cs">
+      <DependentUpon>ProjectTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StylesheetTab.xaml.cs">
+      <DependentUpon>StylesheetTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TabView.xaml.cs">
       <DependentUpon>TabView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TextEditTab.xaml.cs">
       <DependentUpon>TextEditTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\WebsiteStarterTab.xaml.cs">
+      <DependentUpon>WebsiteStarterTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WordPressPlugin.xaml.cs">
+      <DependentUpon>WordPressPlugin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WordPressThemeTab.xaml.cs">
+      <DependentUpon>WordPressThemeTab.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\FiveTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainShell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -106,11 +131,35 @@
       <DependentUpon>MainShell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NewItemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProjectTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StylesheetTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TabView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TextEditTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WebsiteStarterTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WordPressPlugin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WordPressThemeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

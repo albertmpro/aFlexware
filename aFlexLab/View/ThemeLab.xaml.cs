@@ -25,6 +25,9 @@ namespace aFlexLab.View
 		public ThemeLab()
 		{
 			this.InitializeComponent();
+			//ViewModel Menu
+			App.ViewModel.Menu.Visibility = Visibility.Visible;
+
 		}
 	}
 }

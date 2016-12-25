@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Albert.Flex.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,28 +13,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Albert.Flex.Windows.Win32IO;
+
 namespace aFlexCode.View
 {
 	/// <summary>
-	/// Interaction logic for TabView.xaml
+	/// Interaction logic for FiveTheme.xaml
 	/// </summary>
-	public partial class TabView : Page
+	public partial class FiveTheme : UserControl
 	{
-		ProjectTab project;
-		public TabView()
+		public FiveTheme()
 		{
 			InitializeComponent();
-			//Create a Project Tab 
-			project = new ProjectTab(tabControl);
-
-			//Link to the ViewModel 
-			App.ViewModel.Tab = tabControl;
-
-		
 		}
 
-	
+		void opt_Click(object sender, RoutedEventArgs e)
+		{
+			var opt = sender as OptionButton;
+
+			opt.BorderBrushChecked = opt.Background;
+
+		}
 
 	}
 }

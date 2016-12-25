@@ -12,28 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Albert.Flex.Windows.Win32IO;
+using Albert.Flex.Windows;
 namespace aFlexCode.View
 {
 	/// <summary>
-	/// Interaction logic for TabView.xaml
+	/// Interaction logic for WordPressThemeTab.xaml
 	/// </summary>
-	public partial class TabView : Page
+	public partial class WordPressThemeTab : DocumentControl
 	{
-		ProjectTab project;
-		public TabView()
+		public WordPressThemeTab()
 		{
 			InitializeComponent();
-			//Create a Project Tab 
-			project = new ProjectTab(tabControl);
-
-			//Link to the ViewModel 
-			App.ViewModel.Tab = tabControl;
-
-		
 		}
 
-	
+		public WordPressThemeTab(TabControl _tab)
+		{
+			InitializeComponent();
+		}
 
+		public WordPressThemeTab(TabControl _tab, string _fileName)
+		{
+			InitializeComponent();
+		}
 	}
 }

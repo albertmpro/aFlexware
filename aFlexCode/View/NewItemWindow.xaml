@@ -1,0 +1,26 @@
+﻿<tk:ChildWindow x:Class="aFlexCode.View.NewItemWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:aFlexCode.View"
+			 xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:ctrl="clr-namespace:Albert.Flex.Windows;assembly=AlbertWin"
+             mc:Ignorable="d" Caption="New a New Tab"
+		   CaptionForeground="White" FontSize="12pt"
+             d:DesignHeight="300" Foreground="White" Width="508">
+	<Grid Background="{StaticResource AccentBrush4}">
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+			<TextBlock Text="Select a Item" FontWeight="Black" FontSize="14pt" Margin="5" Foreground="White" />
+			<RadioButton x:Name="radText" Foreground="White" IsChecked="True" Content="TextEditor Tab" />
+			<RadioButton x:Name="radSS"  Foreground="White" Content="StyleSheet Tab" />
+			<RadioButton x:Name="radWs" Foreground="White"  Content="Web Starter Tab" />
+			<RadioButton x:Name="radWPTheme" Foreground="White" Content="WordPress Theme Tab" />
+			<RadioButton x:Name="radWPPlugin" Foreground="White" Content="WordPress Plugin Tab" />
+			<StackPanel Orientation="Horizontal">
+				<ctrl:PushButton Click="Button_Click" Margin="8" Width="120" NavString="ok" Content="Ok" />
+				<ctrl:PushButton Click="Button_Click" Margin="8" Width="130" NavString="cancel" Content="Cancel" />
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</tk:ChildWindow>

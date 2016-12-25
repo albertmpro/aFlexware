@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Albert.Flex.Windows;
+
 using static Albert.Flex.Windows.QuickAnimation;
 using static Albert.Flex.Windows.Win32IO;
 namespace aFlexCode.View
@@ -22,9 +23,11 @@ namespace aFlexCode.View
 	/// </summary>
 	public partial class MainShell : ViewShell
 	{
-
+		
 		//Field's TabView 
 		TabView tabView;
+		//NewItem Window 
+		NewItemWindow newItem;
 	
 		public MainShell()
 		{
@@ -35,6 +38,10 @@ namespace aFlexCode.View
 			//Navigate to the tabView  
 			frame.Navigate(tabView);
 
+			//New Item  Window and add it 
+			newItem = new NewItemWindow();
+			Grid.SetRow(newItem, 1); // set the grid row 
+			layoutRoot.Children.Add(newItem); // Add it to the main grid 
 
 			//Link your command bindings 
 			CommandBindings.Add(new CommandBinding(ApplicationCommands.New, New_Command));
@@ -72,25 +79,13 @@ namespace aFlexCode.View
 
 		void New_Command(object sender, ExecutedRoutedEventArgs e)
 		{
-			//Message Box
-			var msg = MessageBox.Show("Do you want to create a new Document", "New Document", MessageBoxButton.YesNo, MessageBoxImage.Hand);
-
-			if (msg == MessageBoxResult.Yes)
-			{
-				var t = new TextEditTab(App.ViewModel.Tab);
-				//Notify the Application 
-				App.ViewModel.Notify("You have created a new Document.");
-			}
-			else if (msg == MessageBoxResult.No)
-			{
-				// Do nothing 
-			}
+			//Show the new item Dialog 
+			newItem.Show();
 		}
 
 
 		void Open_Command(object sender, ExecutedRoutedEventArgs e)
 		{
-
 			//Create an OpenDialog Lamba 
 			OpenDialogTask("Open a Text File", App.ViewModel.TextFilter, (d) =>
 			{
@@ -98,28 +93,8 @@ namespace aFlexCode.View
 				var txtTab = new TextEditTab(App.ViewModel.Tab, d.FileName);
 
 			});
-
 		}
 
-
-		void Export_StyeSheet(object sender, ExecutedRoutedEventArgs e)
-		{
-
-		}
-
-		void Export_WebStarter(object sender, ExecutedRoutedEventArgs e)
-		{
-
-		}
-
-		void Export_WordPressTheme( object sender ,ExecutedRoutedEventArgs e)
-		{
-
-		}
-		void Export_WordPressPlugIn(object sender, ExecutedRoutedEventArgs e)
-		{
-
-		}
 
 	}
 }

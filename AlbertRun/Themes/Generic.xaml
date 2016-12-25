@@ -80,7 +80,8 @@
 
 						<StackPanel  Orientation="Horizontal"  Name="BackgroundGrid" Background="Transparent" VerticalAlignment="Stretch">
 
-							<TextBlock FontSize="{TemplateBinding FontSize}" Height="38" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Symbol}" FontFamily="{TemplateBinding SymbolFontFamily}" Margin="5,8,5,5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<TextBlock FontSize="{TemplateBinding FontSize}" Height="38" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Symbol}" FontFamily="{TemplateBinding SymbolFontFamily}" 
+						 Margin="5,8,5,5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 							<TextBlock x:Name="ContentPresenter" FontSize="{TemplateBinding FontSize}" Text="{TemplateBinding Label}" HorizontalAlignment="Left" Margin="5,0,5,10"    VerticalAlignment="Center"/>
 						</StackPanel>
 					</runtime:ChromeBase>

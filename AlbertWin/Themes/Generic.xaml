@@ -75,7 +75,7 @@
 							<!-- Header -->
 							<Label Foreground="{TemplateBinding Foreground}" Margin="7,0,7,0" VerticalAlignment="Center" HorizontalAlignment="Center"  Content="{TemplateBinding Header}"  />
 							<!-- Closed Button-->
-							<desktop:PushButton Grid.Column="1" Margin="3" FontSize="8pt" x:Name="PART_CloseButton" Width="25" Height="25" Foreground="White" BorderBrushMouseOver="Black"  ForegroundMouseOver="White" ForegroundPressed="White" Content="r" FontFamily="Webdings" Background="Red" BackgroundMouseOver="#FFB62929" BackgroundPressed="DarkRed" />
+							<desktop:PushButton Grid.Column="1" Margin="3" FontSize="8pt" x:Name="PART_CloseButton" Width="30" Height="30" Foreground="White" BorderBrushMouseOver="Black"  ForegroundMouseOver="White" ForegroundPressed="White" Content="r" FontFamily="Webdings" Background="Red" BackgroundMouseOver="#FFB62929" BackgroundPressed="DarkRed" />
 						</Grid>
 					</Border>
 					<ControlTemplate.Triggers>

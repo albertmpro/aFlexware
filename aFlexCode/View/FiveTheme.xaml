@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="aFlexCode.View.FiveTheme"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:aFlexCode.View"
+			 xmlns:ctrl="clr-namespace:Albert.Flex.Windows;assembly=AlbertWin"
+             mc:Ignorable="d" 
+             >
+    <Grid>
+		<StackPanel Orientation="Horizontal">
+			
+			<ctrl:OptionButton x:Name="opt1" ToolTip="{Binding ElementName=brush1, Path=Color}" Click="opt_Click" >
+				<ctrl:OptionButton.Background>
+					<SolidColorBrush x:Name="brush1" Color="Black"  />
+				</ctrl:OptionButton.Background>
+			
+			</ctrl:OptionButton>
+
+			<ctrl:OptionButton x:Name="opt2" Click="opt_Click" ToolTip="{Binding ElementName=brush2, Path=Color}"   >
+				<ctrl:OptionButton.Background>
+					<SolidColorBrush x:Name="brush2" Color="White"  />
+				</ctrl:OptionButton.Background>
+			</ctrl:OptionButton>
+
+			<ctrl:OptionButton x:Name="opt3" Click="opt_Click" ToolTip="{Binding ElementName=brush3, Path=Color}"   >
+				<ctrl:OptionButton.Background>
+					<SolidColorBrush x:Name="brush3" Color="{StaticResource  AccentColor}"  />
+				</ctrl:OptionButton.Background>
+			</ctrl:OptionButton>
+
+			<ctrl:OptionButton x:Name="opt4" Click="opt_Click" ToolTip="{Binding ElementName=brush4, Path=Color}"   >
+				<ctrl:OptionButton.Background>
+					<SolidColorBrush x:Name="brush4" Color="{StaticResource  AccentColor2}"  />
+				</ctrl:OptionButton.Background>
+			</ctrl:OptionButton>
+
+			<ctrl:OptionButton x:Name="opt5"  Click="opt_Click" ToolTip="{Binding ElementName=brush5, Path=Color}"  >
+				<ctrl:OptionButton.Background>
+					<SolidColorBrush x:Name="brush5"  Color="{StaticResource  AccentColor4}" />
+				</ctrl:OptionButton.Background>
+			</ctrl:OptionButton>
+
+		</StackPanel>    
+    </Grid>
+</UserControl>

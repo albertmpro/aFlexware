@@ -1,0 +1,57 @@
+﻿<ctrl:Page10x
+    x:Class="aFlexLab.View.StartLab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:aFlexLab.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ctrl="using:Albert.Flex.Runtime"
+    mc:Ignorable="d">
+
+	<Grid   Background="{ThemeResource AccentBrush7}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="80" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<TextBlock Foreground="White" FontWeight="Black" TextAlignment="Center" FontSize="40" Text="Start Lab" />
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<ctrl:PushButton Click="lab_Click" HorizontalAlignment="Center" ToolTipService.ToolTip="Sketch Lab" NavString="sketch" Width="200" Height="200">
+				<StackPanel>
+					<TextBlock FontSize="30" TextAlignment="Center" Text="Sketch Lab" />
+					<Image Source="ms-appx:///Assets/sketch.png" />
+				</StackPanel>
+			</ctrl:PushButton>
+			<ctrl:PushButton Click="lab_Click" HorizontalAlignment="Center" NavString="theme" ToolTipService.ToolTip="Theme Lab" Grid.Column="1" Width="200" Height="200">
+				<StackPanel>
+					<TextBlock FontSize="30" TextAlignment="Center" Text="Theme Lab" />
+					<Image Source="ms-appx:///Assets/theme.png" Margin="25" />
+				</StackPanel>
+			</ctrl:PushButton>
+
+			<ctrl:PushButton Click="lab_Click" Grid.Row="1"  HorizontalAlignment="Center" NavString="img" ToolTipService.ToolTip="Image Lab" Width="200"   Height="200">
+				<StackPanel>
+					<TextBlock FontSize="30" TextAlignment="Center" Text="Img Lab" />
+					<Image Source="ms-appx:///Assets/imglab.png" Margin="15" />
+				</StackPanel>
+			</ctrl:PushButton>
+			<ctrl:PushButton Click="lab_Click" Grid.Row="1"  HorizontalAlignment="Center" Grid.Column="1" NavString="browser" ToolTipService.ToolTip="Browser Lab" Width="200"   Height="200">
+				<StackPanel>
+					<TextBlock FontSize="30" TextAlignment="Center" Text="Browser Lab" />
+					<Image Source="ms-appx:///Assets/browserlab.png" Margin="15" />
+				</StackPanel>
+			</ctrl:PushButton>
+
+
+		</Grid>
+
+
+	</Grid>
+</ctrl:Page10x>

@@ -27,6 +27,7 @@ namespace aFlexCode.View
 	 	CodeEditor txt2, txt3; //Split code editor's 
 		GridSplitter split1, split2;
 		ColumnDefinition col1, col2, col3, col4, col5;
+
 		/// <summary>
 		/// Default Constructor 
 		/// </summary>

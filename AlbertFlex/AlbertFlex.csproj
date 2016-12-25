@@ -35,7 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="CoreList.cs" />
+    <Compile Include="CssAtt.cs" />
     <Compile Include="EnumUtility.cs" />
+    <Compile Include="HtmlCore.cs" />
     <Compile Include="IViewModel.cs" />
     <Compile Include="Notify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

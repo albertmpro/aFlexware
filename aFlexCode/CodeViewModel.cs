@@ -12,7 +12,8 @@ namespace aFlexCode
 	public class CodeViewModel : ViewModel
 	{
 
-
+		//Commands 
+		RoutedUICommand doc1, doc2, doc3;
 
 		/// <summary>
 		/// Default Constructor 
@@ -20,6 +21,11 @@ namespace aFlexCode
 		public CodeViewModel()
 		{
 			
+		}
+
+		static CodeViewModel()
+		{
+
 		}
 
 		/// <summary>

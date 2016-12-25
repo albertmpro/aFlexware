@@ -11,7 +11,7 @@
     <AssemblyName>aFlexLab</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -104,6 +104,9 @@
     <Compile Include="View\HelpLab.xaml.cs">
       <DependentUpon>HelpLab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ImgLab.xaml.cs">
+      <DependentUpon>ImgLab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainLab.xaml.cs">
       <DependentUpon>MainLab.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,9 @@
     </Compile>
     <Compile Include="View\SketchLab.xaml.cs">
       <DependentUpon>SketchLab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StartLab.xaml.cs">
+      <DependentUpon>StartLab.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThemeLab.xaml.cs">
       <DependentUpon>ThemeLab.xaml</DependentUpon>
@@ -173,6 +179,10 @@
     <Content Include="Assets\appbar\status.png" />
     <Content Include="Assets\appbar\trace.png" />
     <Content Include="Assets\appbar\triangle.png" />
+    <Content Include="Assets\browserlab.png" />
+    <Content Include="Assets\imglab.png" />
+    <Content Include="Assets\sketch.png" />
+    <Content Include="Assets\theme.png" />
     <Content Include="help\index.html" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -199,13 +209,21 @@
       <Name>AlbertRun</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="View\BrowserLab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HelpLab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImgLab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SketchLab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StartLab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

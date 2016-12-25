@@ -9,6 +9,18 @@
     mc:Ignorable="d">
 
 	<SplitView x:Name="splitView" CompactPaneLength="0" DisplayMode="CompactOverlay" OpenPaneLength="300"  PaneBackground="{StaticResource AccentBrush}">
+		<SplitView.Pane>
+			<StackPanel>
+				<ctrl:HamburgerButton Label="Main Menu" Symbol="&#xE700;" Content="Main Menu" />
+				<ctrl:HamburgerButton Click="ham_Click" Symbol="St" SymbolFontFamily="Segoe UI" Label="StartLab" />
+				<ctrl:HamburgerButton Click="ham_Click" Symbol="Sk" SymbolFontFamily="Segoe UI Black" Label="SketchLab" />
+				<ctrl:HamburgerButton Click="ham_Click" Symbol="Th" SymbolFontFamily="Segoe UI Black" Label="ThemeLab" />
+				<ctrl:HamburgerButton Click="ham_Click" Symbol="Im" SymbolFontFamily="Segoe UI Black" Label="ImgLab" />
+				<ctrl:HamburgerButton Click="ham_Click" Symbol="Br" SymbolFontFamily="Segoe UI Black" Label="BrowserLab" />
+
+			</StackPanel>
+		</SplitView.Pane>
+		
 		<Grid Background="{ThemeResource AccentBrush3}">
 			<Grid.RowDefinitions>
 				<RowDefinition />

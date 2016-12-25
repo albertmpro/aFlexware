@@ -35,10 +35,21 @@
 					<BitmapIcon UriSource="ms-appx:///Assets/appbar/erase.png"/>
 				</ctrl:CmdButton.Icon>
 			</ctrl:CmdButton>
-			<ctrl:CmdButton Click="cmd_Click"  Label="Brush Color" >
-				<ctrl:CmdButton.Icon>
-					<BitmapIcon UriSource="ms-appx:///Assets/appbar/colorLabIcon.png"/>
-				</ctrl:CmdButton.Icon>
+			<ctrl:CmdButton Icon="Repair" Label="Bruhs Sizes">
+				<ctrl:CmdButton.Flyout>
+					<Flyout>
+						<Viewbox>				<StackPanel>
+							<Slider x:Name="slideSize" Header="Brush Size" Maximum="80" Minimum="3"  />
+							<Slider x:Name="slideOpacity" Header="Brush Opacity" SmallChange=".05" LargeChange=".15" Maximum="1" Minimum=".1" StepFrequency="0.1" TickFrequency="0.1" />
+
+								<ctrl:PushButton Click="BrushSizeChange_Click" Content="Accept Changes " />
+							</StackPanel>
+						</Viewbox>	
+					</Flyout>
+				</ctrl:CmdButton.Flyout>
+			</ctrl:CmdButton>
+			<ctrl:CmdButton Click="cmd_Click"  Label="Brush Colors" Icon="TouchPointer" >
+
 				<ctrl:CmdButton.Flyout>
 					<Flyout>
 						<Grid>
@@ -48,11 +59,15 @@
 							</Grid.RowDefinitions>
 							<TextBlock Foreground="Black" FontSize="30" Text="Brush Color Picker"  />
 							<Viewbox Grid.Row="1"  Stretch="Uniform">
-								<Grid>
+								<StackPanel>
 									<ctrl:SlideColorPicker x:Name="colorPicker" Width="300" ListWidth="300" ListHeight="250" />
-								</Grid>
+
+
+								
+
+								</StackPanel>
 							</Viewbox>
-							
+
 						</Grid>
 					</Flyout>
 				</ctrl:CmdButton.Flyout>
@@ -82,8 +97,8 @@
 
 			</ctrl:CmdBar.SecondaryCommands>
 		</ctrl:CmdBar>
-		
-		
+
+
 		<Grid x:Name="layoutRoot" Grid.Row="1" />
 
 

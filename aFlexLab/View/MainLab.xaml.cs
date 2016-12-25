@@ -21,7 +21,7 @@ using Windows.UI;
 namespace aFlexLab.View
 {
 	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// Main Lab
 	/// </summary>
 	public sealed partial class MainLab : Page10x
 	{
@@ -31,13 +31,15 @@ namespace aFlexLab.View
 		{
 			this.InitializeComponent();
 
-			//Link to the StartLab 
-			frame.Navigate(typeof(SketchLab));
 
 			//ViewModel Links 
 			App.ViewModel.Menu = hamMenu; // Link to defualt hambuger menu 
 			App.ViewModel.SplitView = splitView; // Link to the splitView
 			App.ViewModel.Frame = frame; // Link to the frame 
+
+			//Link to the StartLab 
+			frame.Navigate(typeof(StartLab));
+
 
 			//OnNotification lamba 
 			App.ViewModel.OnNotification += (_message) =>
@@ -53,8 +55,55 @@ namespace aFlexLab.View
 		void ham_Click(object sender, RoutedEventArgs e)
 		{
 			var ham = sender as HamburgerButton;
+			
+			switch (ham.Label)
+			{
+				case "StartLab":
+					
+					// Navigate to the Start Lab
+					App.ViewModel.Frame.Navigate(typeof(StartLab));
+					//Let the Application know 
+					App.ViewModel.Notify("You are in the Start Lab.");
 
+					break;
+				case "SketchLab":
+					
+					// Navigate to the Sketcvh Lab
+					App.ViewModel.Frame.Navigate(typeof(SketchLab));
+					//Let the Application know 
+					App.ViewModel.Notify("You are in the Sketch Lab.");
 
+					break;
+
+				case "ThemeLab":
+					
+					//Navigate to the Theme Lab
+					App.ViewModel.Frame.Navigate(typeof(ThemeLab));
+					//Let the Application know 
+					App.ViewModel.Notify("You are in the Theme Lab.");
+
+					break;
+
+				case "ImgLab":
+					
+					//Navigate to the Image Lab
+					App.ViewModel.Frame.Navigate(typeof(ImgLab));
+					//Let the Application know 
+					App.ViewModel.Notify("You are in the Img Lab.");
+
+					break;
+				case "BrowserLab":
+
+					//Navigate to the Browser Lab
+					App.ViewModel.Frame.Navigate(typeof(BrowserLab));
+					//Let the Application know 
+					App.ViewModel.Notify("You are in the Browser Lab.");
+
+					break;
+			}
+
+			//Close the Menu 
+			splitView.IsPaneOpen = false;
 
 
 		}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Albert.Flex.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,28 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Albert.Flex.Windows.Win32IO;
+
 namespace aFlexCode.View
 {
 	/// <summary>
-	/// Interaction logic for TabView.xaml
+	/// Interaction logic for WordPressPlugin.xaml
 	/// </summary>
-	public partial class TabView : Page
+	public partial class WordPressPlugin : DocumentControl
 	{
-		ProjectTab project;
-		public TabView()
+		public WordPressPlugin()
 		{
 			InitializeComponent();
-			//Create a Project Tab 
-			project = new ProjectTab(tabControl);
-
-			//Link to the ViewModel 
-			App.ViewModel.Tab = tabControl;
-
-		
 		}
 
-	
+		public WordPressPlugin(TabControl _tab)
+		{
+			InitializeComponent();
+		}
+
+		public WordPressPlugin(TabControl _tab, string _fileName)
+		{
+			InitializeComponent();
+		}
 
 	}
 }
